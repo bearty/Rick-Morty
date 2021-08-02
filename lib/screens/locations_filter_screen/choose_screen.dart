@@ -38,7 +38,7 @@ class LocationsFilterChooseScreen extends StatelessWidget {
                         return context.read<LocationsBloc>()..add(SetLocationMeasurementFilter(''));
                       }),
                   Divider(
-                    color: ColorPalette.widget_bg,
+                    color: Theme.of(context).dividerColor,
                     height: 48,
                     thickness: 2,
                   ),

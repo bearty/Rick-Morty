@@ -11,20 +11,17 @@ class CharacterListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget CharacterStatus() {
-      TextStyle style = TextStyle(color: character.status == 0 ? ColorPalette.green : ColorPalette.red, fontSize: 10);
+      TextStyle style = TextStyle(color: character.status == 0 ? AppColors.green : AppColors.red, fontSize: 10);
 
       switch (character.status) {
         case 0:
-          return const Text('ЖИВОЙ', style: TextStyle(color: ColorPalette.green, fontSize: 10));
+          return const Text('ЖИВОЙ', style: TextStyle(color: AppColors.green, fontSize: 10));
           break;
         case 1:
-          return const Text('МЁРТВЫЙ', style: TextStyle(color: ColorPalette.red, fontSize: 10));
-          break;
-        case 2:
-          return const Text('НЕИЗВЕСТНО', style: TextStyle(color: ColorPalette.blue, fontSize: 10));
+          return const Text('МЁРТВЫЙ', style: TextStyle(color: AppColors.red, fontSize: 10));
           break;
         default:
-          return const Text('');
+          return const Text('НЕИЗВЕСТНО', style: TextStyle(color: AppColors.blue, fontSize: 10));
       }
     }
 
@@ -35,9 +32,6 @@ class CharacterListItem extends StatelessWidget {
           break;
         case 1:
           return 'Женский';
-          break;
-        case 2:
-          return 'Бесполый';
           break;
         default:
           return 'Бесполый';
@@ -73,7 +67,7 @@ class CharacterListItem extends StatelessWidget {
                     maxLines: 2,
                     softWrap: true,
                     style: TextStyle(
-                      color: ColorPalette.white,
+                      color: Theme.of(context).accentColor,
                       fontSize: 16,
                     ),
                   ),
@@ -81,7 +75,7 @@ class CharacterListItem extends StatelessWidget {
                     "${character.race}, ${CharacterGender()}",
                     maxLines: 2,
                     style: TextStyle(
-                      color: ColorPalette.gray_text,
+                      color: AppColors.gray,
                       fontSize: 12,
                     ),
                   ),

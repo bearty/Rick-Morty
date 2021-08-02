@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
 import 'package:ricknmorty/screens/characters_filter_screen/screen.dart';
 import 'package:ricknmorty/screens/episode_screen/screen.dart';
 import 'package:ricknmorty/screens/location_screen/screen.dart';
@@ -19,68 +20,44 @@ import 'package:ricknmorty/screens/main_screen/screen.dart';
 import 'package:ricknmorty/screens/character_screen/screen.dart';
 import 'package:ricknmorty/screens/search_screen/search.dart';
 import 'package:ricknmorty/theme/color_theme.dart';
+import 'package:ricknmorty/theme/main_theme.dart';
 import 'package:ricknmorty/theme/text_theme.dart';
+import 'package:ricknmorty/theme/theme_manager.dart';
 
 import 'bloc/bloc.dart';
+import 'data/repository.dart';
 
 void main() {
   initializeDateFormatting();
-  runApp(MyApp());
+  return runApp(ChangeNotifierProvider<ThemeNotifier>(
+    create: (_) => ThemeNotifier(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<ThemeBloc>(
-          create: (context) => ThemeBloc()..add(InitialThemeEvent()),
-        ),
-        BlocProvider<CharactersBloc>(
-          create: (context) => CharactersBloc()..add(CharactersFetch()),
-        ),
-        BlocProvider<EpisodesBloc>(
-          create: (context) => EpisodesBloc()..add(EpisodesFetch()),
-        ),
-        BlocProvider<LocationsBloc>(
-          create: (context) => LocationsBloc()..add(LocationsFetch()),
-        ),
-      ],
-      child: BlocBuilder<ThemeBloc, ThemeState>(
-        builder: (_, state) {
-          /// Сравниваем состояние с имеющимися
-
-          SystemChrome.setSystemUIOverlayStyle(
-            SystemUiOverlayStyle(
-              statusBarColor: Colors.transparent,
-              statusBarIconBrightness: state.themeMode == ThemeMode.light ? Brightness.light : Brightness.dark,
-            ),
-          );
-
-          /// Возвращаем виджет
-          return AnnotatedRegion(
+    return MultiRepositoryProvider(
+      providers: [RepositoryProvider<Repository>(create: (_) => Repository()..init())],
+      child: Consumer<ThemeNotifier>(
+        builder: (context, theme, _) => MultiBlocProvider(
+          providers: [
+            BlocProvider<CharactersBloc>(create: (context) => CharactersBloc()..add(CharactersFetch())),
+            BlocProvider<EpisodesBloc>(create: (context) => EpisodesBloc()..add(EpisodesFetch())),
+            BlocProvider<LocationsBloc>(create: (context) => LocationsBloc()..add(LocationsFetch())),
+          ],
+          child: AnnotatedRegion(
             value: SystemUiOverlayStyle(
               statusBarColor: Colors.transparent,
+              statusBarIconBrightness: theme.getThemeMode() == ThemeMode.light ? Brightness.light : Brightness.dark,
             ),
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
-              title: 'Flutter Demo',
-              theme: ThemeData(
-                textTheme: darkTextTheme,
-                fontFamily: 'Roboto',
-                primaryColor: ColorPalette.bg,
-                accentColor: ColorPalette.widget_bg,
-                scaffoldBackgroundColor: ColorPalette.red,
-              ),
-              darkTheme: ThemeData(
-                textTheme: darkTextTheme,
-                fontFamily: 'Roboto',
-                primaryColor: ColorPalette.bg,
-                accentColor: ColorPalette.widget_bg,
-                scaffoldBackgroundColor: ColorPalette.bg,
-                unselectedWidgetColor: ColorPalette.unselected_widget,
-              ),
-              themeMode: state.themeMode,
+              title: 'Rick & Morty',
+              theme: theme.getTheme(),
+              // darkTheme: darkTheme,
+              // themeMode: state.themeMode,
               home: SplashScreen(),
               onGenerateRoute: (settings) {
                 String name = settings.name;
@@ -124,8 +101,8 @@ class MyApp extends StatelessWidget {
                 return null;
               },
             ),
-          );
-        },
+          ),
+        ),
       ),
     );
 
@@ -181,7 +158,7 @@ class _SplashScreenState extends State<SplashScreen> {
       onTap: () => _goToMainScreen(),
       child: Container(
         decoration: BoxDecoration(
-          color: ColorPalette.bg,
+          color: AppColors.primaryDark,
           image: DecorationImage(
             image: AssetImage('assets/images/splash_bg.png'),
             fit: BoxFit.cover,

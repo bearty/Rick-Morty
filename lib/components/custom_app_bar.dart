@@ -30,10 +30,10 @@ class CustomAppBar extends PreferredSize {
                 margin: EdgeInsets.only(left: 16),
                 child: CustomCircleButton(
                   onTap: () => Navigator.of(context).pop(),
-                  bg: ColorPalette.widget_bg,
+                  bg: Theme.of(context).scaffoldBackgroundColor,
                   icon: SvgPicture.asset(
                     MainIcons.back,
-                    color: ColorPalette.white,
+                    color: Theme.of(context).accentColor,
                   ),
                 ),
               ),

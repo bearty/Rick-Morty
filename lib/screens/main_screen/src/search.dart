@@ -26,8 +26,8 @@ class SearchBar extends StatelessWidget {
       // controller: TextEditingController(),
       controller: _textEditingController,
       focusNode: FocusNode(),
-      style: TextStyle(color: ColorPalette.gray_text),
-      cursorColor: ColorPalette.gray_text,
+      style: TextStyle(color: AppColors.gray),
+      cursorColor: AppColors.gray,
       // onChanged: (change) => print(change),
       onEditingComplete: () {
         FocusScope.of(context).requestFocus(new FocusNode());
@@ -38,18 +38,18 @@ class SearchBar extends StatelessWidget {
           borderRadius: BorderRadius.circular(24),
           borderSide: BorderSide.none,
         ),
-        fillColor: Theme.of(context).accentColor,
+        // fillColor: Theme.of(context).accentColor,
         filled: true,
         contentPadding: const EdgeInsets.symmetric(vertical: 12),
         hintText: "$placeholder",
-        hintStyle: TextStyle(color: ColorPalette.gray_text),
+        hintStyle: TextStyle(color: AppColors.gray),
         isDense: true,
         prefixIcon: IconButton(
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
           icon: SvgPicture.asset(
             MainIcons.search,
-            color: ColorPalette.gray_text,
+            color: AppColors.gray,
           ),
           onPressed: null,
         ),
@@ -73,7 +73,7 @@ class SearchBar extends StatelessWidget {
                       onPressed: () => onPressSomeButton(onFilter),
                       icon: SvgPicture.asset(
                         MainIcons.filter,
-                        color: ColorPalette.gray_text,
+                        color: AppColors.gray,
                       ),
                     )
                   ],

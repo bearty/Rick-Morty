@@ -6,6 +6,6 @@ class GreenCircleLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircularProgressIndicator(color: ColorPalette.green, backgroundColor: ColorPalette.blue);
+    return CircularProgressIndicator(color: AppColors.green, backgroundColor: AppColors.blue);
   }
 }

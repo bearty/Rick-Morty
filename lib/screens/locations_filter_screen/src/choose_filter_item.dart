@@ -22,7 +22,7 @@ class ChooseFilterItem extends StatelessWidget {
       title: Text(
         name,
         style: TextStyle(
-          color: selected ? ColorPalette.blue : ColorPalette.white,
+          color: selected ? AppColors.blue : Theme.of(context).accentColor,
           fontSize: 16,
         ),
       ),

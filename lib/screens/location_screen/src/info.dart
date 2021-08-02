@@ -26,7 +26,7 @@ class LocationInfo extends StatelessWidget {
           Text(
             location.about,
             style: TextStyle(
-              color: ColorPalette.white,
+              color: Theme.of(context).accentColor,
               fontSize: 13,
               height: 1.5,
             ),

@@ -23,7 +23,7 @@ class CharacterEpisodes extends StatelessWidget {
               Text(
                 'Эпизоды',
                 style: TextStyle(
-                  color: ColorPalette.white,
+                  color: Theme.of(context).accentColor,
                   fontSize: 20,
                 ),
               ),
@@ -32,7 +32,7 @@ class CharacterEpisodes extends StatelessWidget {
                 child: Text(
                   'Все эпизоды',
                   style: TextStyle(
-                    color: ColorPalette.gray_text,
+                    color: AppColors.gray,
                     fontSize: 12,
                   ),
                 ),

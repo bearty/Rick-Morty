@@ -27,7 +27,7 @@ class EpisodeInfo extends StatelessWidget {
           Text(
             "СЕРИЯ ${episode.series}",
             style: TextStyle(
-              color: ColorPalette.blue,
+              color: AppColors.blue,
               fontSize: 10,
             ),
           ),
@@ -35,7 +35,7 @@ class EpisodeInfo extends StatelessWidget {
           Text(
             episode.plot,
             style: TextStyle(
-              color: ColorPalette.white,
+              color: Theme.of(context).accentColor,
               fontSize: 13,
               height: 1.5,
             ),

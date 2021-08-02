@@ -38,7 +38,7 @@ class _SearchBarBottomState extends State<SearchBarBottom> {
                   '${widget.text}',
                   style: TextStyle(
                     fontSize: 10,
-                    color: ColorPalette.gray_text,
+                    color: AppColors.gray,
                   ),
                 ),
                 widget.onPress == null
@@ -47,15 +47,13 @@ class _SearchBarBottomState extends State<SearchBarBottom> {
                         onPressed: widget.onPress,
                         icon: SvgPicture.asset(
                           widget.isGrid ? MainIcons.grid : MainIcons.list,
-                          color: ColorPalette.gray_text,
+                          color: AppColors.gray,
                         ),
                       ),
               ],
             ),
           ),
-          !widget.showLoader
-              ? const SizedBox()
-              : LinearProgressIndicator(minHeight: 1, color: ColorPalette.green, backgroundColor: ColorPalette.blue),
+          !widget.showLoader ? const SizedBox() : LinearProgressIndicator(minHeight: 1, color: AppColors.green, backgroundColor: AppColors.blue),
         ],
       ),
     );

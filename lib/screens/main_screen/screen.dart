@@ -43,43 +43,52 @@ class _MainScreenState extends State<MainScreen> {
         SettingsTab(),
       ].elementAt(_selectedTab),
       bottomNavigationBar: BottomNavigationBar(
+        
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               MainIcons.character,
-              color: _selectedTab == 0 ? Theme.of(context).textTheme.bodyText2.color : Theme.of(context).textTheme.subtitle2.color,
+              color: _selectedTab == 0
+                  ? Theme.of(context).bottomNavigationBarTheme.selectedItemColor
+                  : Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
             ),
             label: 'Персонажи',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               MainIcons.location,
-              color: _selectedTab == 1 ? Theme.of(context).textTheme.bodyText2.color : Theme.of(context).textTheme.subtitle2.color,
+              color: _selectedTab == 1
+                  ? Theme.of(context).bottomNavigationBarTheme.selectedItemColor
+                  : Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
             ),
             label: 'Локации',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               MainIcons.episode,
-              color: _selectedTab == 2 ? Theme.of(context).textTheme.bodyText2.color : Theme.of(context).textTheme.subtitle2.color,
+              color: _selectedTab == 2
+                  ? Theme.of(context).bottomNavigationBarTheme.selectedItemColor
+                  : Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
             ),
             label: 'Эпизоды',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               MainIcons.settings,
-              color: _selectedTab == 3 ? Theme.of(context).textTheme.bodyText2.color : Theme.of(context).textTheme.subtitle2.color,
+              color: _selectedTab == 3
+                  ? Theme.of(context).bottomNavigationBarTheme.selectedItemColor
+                  : Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
             ),
             label: 'Настройки',
           ),
         ],
         currentIndex: _selectedTab,
-        selectedItemColor: Theme.of(context).textTheme.bodyText2.color,
-        unselectedItemColor: Theme.of(context).textTheme.subtitle2.color,
-        selectedLabelStyle: TextStyle(fontSize: 12),
-        unselectedLabelStyle: TextStyle(fontSize: 12),
-        backgroundColor: Theme.of(context).accentColor,
+        // selectedItemColor: Theme.of(context).textTheme.bodyText2.color,
+        // unselectedItemColor: Theme.of(context).textTheme.subtitle2.color,
+        // selectedLabelStyle: TextStyle(fontSize: 12),
+        // unselectedLabelStyle: TextStyle(fontSize: 12),
+        // backgroundColor: Theme.of(context).accentColor,
         onTap: (i) => onSelectTab(i),
       ),
     );

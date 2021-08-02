@@ -22,14 +22,14 @@ class InfoItem extends StatelessWidget {
       title: Text(
         title,
         style: TextStyle(
-          color: ColorPalette.gray_text,
+          color: AppColors.gray,
           fontSize: 12,
         ),
       ),
       subtitle: Text(
         subtitle,
         style: TextStyle(
-          color: ColorPalette.white,
+          color: Theme.of(context).accentColor,
           fontSize: 14,
         ),
       ),
@@ -37,7 +37,7 @@ class InfoItem extends StatelessWidget {
           ? const SizedBox()
           : SvgPicture.asset(
               MainIcons.arrow,
-              color: ColorPalette.white,
+              color: Theme.of(context).accentColor,
             ),
     );
   }

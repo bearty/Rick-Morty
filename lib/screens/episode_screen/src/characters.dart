@@ -20,7 +20,7 @@ class EpisodeCharacters extends StatelessWidget {
           Text(
             'Персонажи',
             style: TextStyle(
-              color: ColorPalette.white,
+              color: Theme.of(context).accentColor,
               fontSize: 20,
             ),
           ),

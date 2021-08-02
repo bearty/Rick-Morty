@@ -40,7 +40,7 @@ class SearchScreen extends StatelessWidget {
                 children: [
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 24),
-                    child: Text('РЕЗУЛЬТАТЫ ПОИСКА', style: TextStyle(color: ColorPalette.gray_text, letterSpacing: 1.5)),
+                    child: Text('РЕЗУЛЬТАТЫ ПОИСКА', style: TextStyle(color: AppColors.gray, letterSpacing: 1.5)),
                   ),
                   !isFinded
                       ? Container(
@@ -53,7 +53,7 @@ class SearchScreen extends StatelessWidget {
                                 Text(
                                   'Персонаж с таким именем не найден',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(color: ColorPalette.white, fontSize: 16),
+                                  style: TextStyle(color: Theme.of(context).accentColor, fontSize: 16),
                                 ),
                               ],
                             ),
@@ -91,7 +91,7 @@ class SearchScreen extends StatelessWidget {
                 children: [
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 24),
-                    child: Text('РЕЗУЛЬТАТЫ ПОИСКА', style: TextStyle(color: ColorPalette.gray_text, letterSpacing: 1.5)),
+                    child: Text('РЕЗУЛЬТАТЫ ПОИСКА', style: TextStyle(color: AppColors.gray, letterSpacing: 1.5)),
                   ),
                   !isFinded
                       ? Container(
@@ -104,7 +104,7 @@ class SearchScreen extends StatelessWidget {
                                 Text(
                                   'Локации с таким названием не найдено',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(color: ColorPalette.white, fontSize: 16),
+                                  style: TextStyle(color: Theme.of(context).accentColor, fontSize: 16),
                                 ),
                               ],
                             ),
@@ -143,7 +143,7 @@ class SearchScreen extends StatelessWidget {
                 children: [
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 24),
-                    child: Text('РЕЗУЛЬТАТЫ ПОИСКА', style: TextStyle(color: ColorPalette.gray_text, letterSpacing: 1.5)),
+                    child: Text('РЕЗУЛЬТАТЫ ПОИСКА', style: TextStyle(color: AppColors.gray, letterSpacing: 1.5)),
                   ),
                   !isFinded
                       ? Container(
@@ -156,7 +156,7 @@ class SearchScreen extends StatelessWidget {
                                 Text(
                                   'Эпизода с таким названием нет',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(color: ColorPalette.white, fontSize: 16),
+                                  style: TextStyle(color: Theme.of(context).accentColor, fontSize: 16),
                                 ),
                               ],
                             ),

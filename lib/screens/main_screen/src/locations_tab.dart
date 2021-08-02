@@ -62,7 +62,7 @@ class LocationsTab extends StatelessWidget {
                           Text(
                             'По данным фильтра ничего \nне найдено',
                             textAlign: TextAlign.center,
-                            style: TextStyle(color: ColorPalette.gray_text, fontSize: 16),
+                            style: TextStyle(color: AppColors.gray, fontSize: 16),
                           ),
                         ],
                       ),

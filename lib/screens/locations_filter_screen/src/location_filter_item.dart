@@ -27,7 +27,7 @@ class LocationFilterItem extends StatelessWidget {
         child: Text(
           title,
           style: TextStyle(
-            color: ColorPalette.white,
+            color: Theme.of(context).accentColor,
             fontSize: 16,
           ),
         ),
@@ -35,7 +35,7 @@ class LocationFilterItem extends StatelessWidget {
       subtitle: Text(
         subtitle,
         style: TextStyle(
-          color: ColorPalette.gray_text,
+          color: AppColors.gray,
           fontSize: 14,
         ),
       ),

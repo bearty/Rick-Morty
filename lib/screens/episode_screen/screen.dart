@@ -68,10 +68,10 @@ class EpisodeScreen extends StatelessWidget {
                                 onTap: () => print("play episode ${state.episode.name}"),
                                 child: CircleAvatar(
                                   radius: 50,
-                                  backgroundColor: ColorPalette.blue,
+                                  backgroundColor: AppColors.blue,
                                   child: SvgPicture.asset(
                                     MainIcons.play,
-                                    color: ColorPalette.white,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),
@@ -82,7 +82,7 @@ class EpisodeScreen extends StatelessWidget {
                       SizedBox(height: 32),
                       EpisodeInfo(state.episode),
                       Divider(
-                        color: ColorPalette.widget_bg,
+                        color: Theme.of(context).dividerColor,
                         height: 2,
                       ),
                       const SizedBox(height: 36),

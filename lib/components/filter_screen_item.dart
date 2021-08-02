@@ -21,7 +21,7 @@ class FilterItem extends StatelessWidget {
         child: Text(
           title.toUpperCase(),
           style: TextStyle(
-            color: ColorPalette.gray_text,
+            color: AppColors.gray,
             fontSize: 10,
             letterSpacing: 1.5,
           ),

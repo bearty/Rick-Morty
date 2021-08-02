@@ -46,7 +46,7 @@ class BluredImage extends StatelessWidget {
             ? const SizedBox()
             : Container(
                 decoration: BoxDecoration(
-                  color: ColorPalette.bg.withOpacity(0.65),
+                  color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.65),
                 ),
               ),
       ],

@@ -30,18 +30,18 @@ class LocationItem extends StatelessWidget {
               ),
             ),
             ListTile(
-              tileColor: Theme.of(context).accentColor,
+              tileColor: Theme.of(context).dialogBackgroundColor,
               title: Text(
                 location.name,
                 style: TextStyle(
                   fontSize: 20,
-                  color: ColorPalette.white,
+                  color: Theme.of(context).accentColor,
                 ),
               ),
               subtitle: Text(
                 "Мир · ${location.measurements}",
                 style: TextStyle(
-                  color: ColorPalette.gray_text,
+                  color: AppColors.gray,
                 ),
               ),
             ),

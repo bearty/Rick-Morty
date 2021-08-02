@@ -43,7 +43,7 @@ class EpisodeListItem extends StatelessWidget {
                   Text(
                     'СЕРИЯ ${episode.series}',
                     style: TextStyle(
-                      color: ColorPalette.blue,
+                      color: AppColors.blue,
                       fontSize: 10,
                     ),
                   ),
@@ -52,14 +52,14 @@ class EpisodeListItem extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
-                      color: ColorPalette.white,
+                      color: Theme.of(context).accentColor,
                       fontSize: 16,
                     ),
                   ),
                   Text(
                     dateformat.format(episode.premiere),
                     style: TextStyle(
-                      color: ColorPalette.gray_text,
+                      color: AppColors.gray,
                       fontSize: 12,
                     ),
                   ),
@@ -68,7 +68,7 @@ class EpisodeListItem extends StatelessWidget {
             ),
             SvgPicture.asset(
               MainIcons.arrow,
-              color: ColorPalette.gray_text,
+              color: AppColors.gray,
             ),
           ],
         ),

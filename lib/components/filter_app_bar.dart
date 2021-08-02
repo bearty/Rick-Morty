@@ -20,7 +20,7 @@ class FilterAppBar extends PreferredSize {
   Widget build(BuildContext context) {
     double appBarHeight = AppBar().preferredSize.height;
     return AppBar(
-      backgroundColor: ColorPalette.widget_bg,
+      backgroundColor: Theme.of(context).dividerColor,
       elevation: 0,
       automaticallyImplyLeading: false,
       leadingWidth: appBarHeight + 16,
@@ -28,7 +28,7 @@ class FilterAppBar extends PreferredSize {
         onPressed: () => Navigator.of(context).maybePop(),
         icon: SvgPicture.asset(
           MainIcons.back,
-          color: ColorPalette.white,
+          color: Theme.of(context).accentColor,
         ),
       ),
       centerTitle: false,

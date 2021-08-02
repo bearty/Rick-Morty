@@ -9,6 +9,19 @@ class CharacterInfo extends StatelessWidget {
 
   CharacterInfo(this.character);
 
+  Widget CharacterStatus() {
+    switch (character.status) {
+      case 0:
+        return const Text('ЖИВОЙ', style: TextStyle(color: AppColors.green, fontSize: 10));
+        break;
+      case 1:
+        return const Text('МЁРТВЫЙ', style: TextStyle(color: AppColors.red, fontSize: 10));
+        break;
+      default:
+        return const Text('НЕИЗВЕСТНО', style: TextStyle(color: AppColors.blue, fontSize: 10));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,23 +32,17 @@ class CharacterInfo extends StatelessWidget {
             character.fullName,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: ColorPalette.white,
+              color: Theme.of(context).accentColor,
               fontSize: 34,
             ),
           ),
-          Text(
-            character.status == 0 ? 'ЖИВОЙ' : 'МËРТВЫЙ',
-            style: TextStyle(
-              color: character.status == 0 ? ColorPalette.green : ColorPalette.red,
-              fontSize: 10,
-            ),
-          ),
+          CharacterStatus(),
           SizedBox(height: 36),
           Text(
             //description
             character.about,
             style: TextStyle(
-              color: ColorPalette.white,
+              color: Theme.of(context).accentColor,
               fontSize: 13,
               height: 1.5,
             ),

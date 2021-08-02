@@ -57,7 +57,7 @@ class CharacterScreen extends StatelessWidget {
                               bottom: -86,
                               child: CircleAvatar(
                                 radius: 86,
-                                backgroundColor: ColorPalette.bg,
+                                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                                 child: CircleAvatar(
                                   radius: 78,
                                   backgroundImage: NetworkImage(state.character.imageName),
@@ -70,7 +70,7 @@ class CharacterScreen extends StatelessWidget {
                       SizedBox(height: 86),
                       CharacterInfo(state.character),
                       Divider(
-                        color: ColorPalette.widget_bg,
+                        color: Theme.of(context).dividerColor,
                         height: 2,
                       ),
                       CharacterEpisodes(state.episodes),

@@ -55,7 +55,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: ColorPalette.widget_bg,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       elevation: 0,
       automaticallyImplyLeading: false,
       // leadingWidth: appBarHeight + 16,
@@ -63,7 +63,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
         onPressed: () => Navigator.of(context).maybePop(),
         icon: SvgPicture.asset(
           MainIcons.back,
-          color: ColorPalette.white,
+          color: Theme.of(context).accentColor,
         ),
       ),
       centerTitle: false,
@@ -72,8 +72,8 @@ class _SearchAppBarState extends State<SearchAppBar> {
         controller: _textEditingController,
         // initialValue: text,
         focusNode: focusNode,
-        style: TextStyle(color: ColorPalette.white, fontSize: 16),
-        cursorColor: ColorPalette.white,
+        style: TextStyle(color: Theme.of(context).accentColor, fontSize: 16),
+        cursorColor: Theme.of(context).accentColor,
         // onChanged: (change) => print(change),
         onEditingComplete: () {
           FocusScope.of(context).requestFocus(FocusNode());
@@ -84,11 +84,11 @@ class _SearchAppBarState extends State<SearchAppBar> {
             borderRadius: BorderRadius.circular(24),
             borderSide: BorderSide.none,
           ),
-          fillColor: Theme.of(context).accentColor,
+          fillColor: Theme.of(context).scaffoldBackgroundColor,
           filled: true,
           contentPadding: const EdgeInsets.symmetric(vertical: 12),
           hintText: hintText,
-          hintStyle: TextStyle(color: ColorPalette.gray_text),
+          hintStyle: TextStyle(color: AppColors.gray),
           isDense: true,
         ),
       ),
@@ -103,7 +103,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
           },
           icon: SvgPicture.asset(
             MainIcons.disable,
-            color: ColorPalette.gray_text,
+            color: AppColors.gray,
           ),
         ),
       ],

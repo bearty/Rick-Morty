@@ -55,14 +55,14 @@ class LocationsFilterScreen extends StatelessWidget {
                                 onPressed: () => context.read<LocationsBloc>()..add(LocationsSetSort(true)),
                                 icon: SvgPicture.asset(
                                   MainIcons.sort_asc,
-                                  color: state.sortForward ? ColorPalette.blue : ColorPalette.gray_text,
+                                  color: state.sortForward ? AppColors.blue : AppColors.gray,
                                 ),
                               ),
                               IconButton(
                                 onPressed: () => context.read<LocationsBloc>()..add(LocationsSetSort(false)),
                                 icon: SvgPicture.asset(
                                   MainIcons.sort_des,
-                                  color: !state.sortForward ? ColorPalette.blue : ColorPalette.gray_text,
+                                  color: !state.sortForward ? AppColors.blue : AppColors.gray,
                                 ),
                               ),
                             ],
@@ -71,14 +71,14 @@ class LocationsFilterScreen extends StatelessWidget {
                       ),
                     ),
                     Divider(
-                      color: ColorPalette.widget_bg,
+                      color: Theme.of(context).dividerColor,
                       height: 72,
                       thickness: 2,
                     ),
                     Text(
                       'Фильтровать по'.toUpperCase(),
                       textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 10, color: ColorPalette.gray_text, letterSpacing: 1.5),
+                      style: TextStyle(fontSize: 10, color: AppColors.gray, letterSpacing: 1.5),
                     ),
                     SizedBox(height: 36),
                     LocationFilterItem(

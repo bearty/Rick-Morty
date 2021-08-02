@@ -33,9 +33,7 @@ class SettingsItem extends StatelessWidget {
           contentPadding: const EdgeInsets.all(0),
           title: Text(
             title,
-            style: TextStyle(
-                color: Theme.of(context).textTheme.headline6.color,
-                fontSize: onTap == null ? 13 : 16),
+            style: TextStyle(color: Theme.of(context).textTheme.headline6.color, fontSize: onTap == null ? 13 : 16),
           ),
           subtitle: subtitle == null
               ? null

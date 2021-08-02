@@ -24,7 +24,7 @@ class _CharacterEpisodesState extends State<CharacterEpisodes> {
               Text(
                 'Эпизоды',
                 style: TextStyle(
-                  color: ColorPalette.white,
+                  color: Theme.of(context).accentColor,
                   fontSize: 20,
                 ),
               ),
@@ -33,7 +33,7 @@ class _CharacterEpisodesState extends State<CharacterEpisodes> {
                 child: Text(
                   'Все эпизоды',
                   style: TextStyle(
-                    color: ColorPalette.gray_text,
+                    color: AppColors.gray,
                     fontSize: 12,
                   ),
                 ),
