@@ -1,6 +1,6 @@
 # ricknmorty
 
-A new Flutter project.
+Rick And Morty 
 
 ## Getting Started
 

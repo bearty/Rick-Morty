@@ -5,6 +5,7 @@ import 'package:ricknmorty/screens/main_screen/bloc/characters_bloc.dart';
 import 'package:ricknmorty/screens/main_screen/src/character_grid_item.dart';
 import 'package:ricknmorty/components/character_list_item.dart';
 import 'package:ricknmorty/screens/main_screen/src/search.dart';
+import 'package:ricknmorty/screens/search_screen/bloc/search_bloc.dart';
 import 'package:ricknmorty/screens/search_screen/search.dart';
 import 'package:ricknmorty/theme/color_theme.dart';
 
@@ -32,7 +33,7 @@ class CharactersTab extends StatelessWidget {
                   placeholder: "Найти персонажа",
                   onFilter: () => Navigator.pushNamed(context, '/characters-filter'),
                   onSearch: (String text) {
-                    context.read<CharactersBloc>()..add(CharactersSearch(text));
+                    context.read<SearchBloc>()..add(SearchCharactersEvent(text));
                     Navigator.pushNamed(context, '/search', arguments: {'type': SearchType.character, 'text': text});
                   },
                 ),

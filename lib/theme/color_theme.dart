@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColorPalette {
+/*class ColorPalette {
   static const bg = Color(0xFF0B1E2C);
   static const widget_bg = Color(0xFF152A3A);
   static const red = Color(0xFFEB5757);
@@ -11,7 +11,7 @@ class ColorPalette {
   static const unselected_widget = Color(0xFF5B6975);
   static const white = Color(0xFFFFFFFF);
   static const black = Color(0xFF0B1E2D);
-}
+}*/
 
 class AppColors {
   static const green = Color(0xFF43D049);

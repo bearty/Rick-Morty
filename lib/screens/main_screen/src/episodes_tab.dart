@@ -8,6 +8,7 @@ import 'package:ricknmorty/screens/main_screen/bloc/episodes_bloc.dart';
 import 'package:ricknmorty/screens/main_screen/bloc/locations_bloc.dart';
 import 'package:ricknmorty/screens/main_screen/src/location_item.dart';
 import 'package:ricknmorty/screens/main_screen/src/search.dart';
+import 'package:ricknmorty/screens/search_screen/bloc/search_bloc.dart';
 import 'package:ricknmorty/screens/search_screen/search.dart';
 import 'package:ricknmorty/theme/color_theme.dart';
 
@@ -59,7 +60,7 @@ class EpisodesTab extends StatelessWidget {
                 title: SearchBar(
                     placeholder: "Найти эпизод",
                     onSearch: (String text) {
-                      context.read<EpisodesBloc>()..add(EpisodesSearch(text));
+                      context.read<SearchBloc>()..add(SearchEpisodesEvent(text));
                       Navigator.pushNamed(context, '/search', arguments: {'type': SearchType.episode, 'text': text, 'data': state.allEpisodes});
                     }),
                 bottom: PreferredSize(

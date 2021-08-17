@@ -15,6 +15,7 @@ class CharactersState extends Equatable {
     this.hasReachedMax = false,
     this.isGrid = false,
     this.page = 1,
+    this.totalCharacters = 0,
   });
 
   final CharactersStatus status;
@@ -28,6 +29,7 @@ class CharactersState extends Equatable {
   final bool hasReachedMax;
   final bool isGrid;
   final int page;
+  final int totalCharacters;
 
   CharactersState copyWith({
     CharactersStatus status,
@@ -41,6 +43,7 @@ class CharactersState extends Equatable {
     bool hasReachedMax,
     bool isGrid,
     int page,
+    int totalCharacters,
   }) {
     return CharactersState(
       status: status ?? this.status,
@@ -54,6 +57,7 @@ class CharactersState extends Equatable {
       hasReachedMax: hasReachedMax ?? this.hasReachedMax,
       isGrid: isGrid ?? this.isGrid,
       page: page ?? this.page,
+      totalCharacters: totalCharacters ?? this.totalCharacters,
     );
   }
 
@@ -73,6 +77,7 @@ class CharactersState extends Equatable {
         hasReachedMax,
         isGrid,
         page,
+        totalCharacters,
         filterStatus,
         filterGender,
       ];

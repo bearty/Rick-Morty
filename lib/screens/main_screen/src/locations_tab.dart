@@ -6,6 +6,7 @@ import 'package:ricknmorty/screens/main_screen/bloc/locations_bloc.dart';
 import 'package:ricknmorty/screens/main_screen/src/location_item.dart';
 import 'package:ricknmorty/screens/main_screen/src/search.dart';
 import 'package:ricknmorty/screens/main_screen/src/search_bar_bottom.dart';
+import 'package:ricknmorty/screens/search_screen/bloc/search_bloc.dart';
 import 'package:ricknmorty/screens/search_screen/search.dart';
 import 'package:ricknmorty/theme/color_theme.dart';
 
@@ -30,7 +31,7 @@ class LocationsTab extends StatelessWidget {
                   placeholder: "Найти локацию",
                   onFilter: () => Navigator.pushNamed(context, '/locations-filter'),
                   onSearch: (String text) {
-                    context.read<LocationsBloc>()..add(LocationsSearch(text));
+                    context.read<SearchBloc>()..add(SearchLocationsEvent(text));
                     Navigator.pushNamed(context, '/search', arguments: {'type': SearchType.location, 'text': text, 'data': state.allLocations});
                   }),
               bottom: PreferredSize(

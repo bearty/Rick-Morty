@@ -99,7 +99,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
           onPressed: () {
             _textEditingController.clear();
             FocusScope.of(context).requestFocus(focusNode);
-            widget.onClear();
+            if (widget.onClear != null) widget.onClear();
           },
           icon: SvgPicture.asset(
             MainIcons.disable,

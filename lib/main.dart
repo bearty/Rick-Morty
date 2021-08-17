@@ -18,6 +18,7 @@ import 'package:ricknmorty/screens/main_screen/bloc/locations_bloc.dart';
 import 'package:ricknmorty/screens/main_screen/bloc/characters_bloc.dart';
 import 'package:ricknmorty/screens/main_screen/screen.dart';
 import 'package:ricknmorty/screens/character_screen/screen.dart';
+import 'package:ricknmorty/screens/search_screen/bloc/search_bloc.dart';
 import 'package:ricknmorty/screens/search_screen/search.dart';
 import 'package:ricknmorty/theme/color_theme.dart';
 import 'package:ricknmorty/theme/main_theme.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
             BlocProvider<CharactersBloc>(create: (context) => CharactersBloc()..add(CharactersFetch())),
             BlocProvider<EpisodesBloc>(create: (context) => EpisodesBloc()..add(EpisodesFetch())),
             BlocProvider<LocationsBloc>(create: (context) => LocationsBloc()..add(LocationsFetch())),
+            BlocProvider<SearchBloc>(create: (context) => SearchBloc()),
           ],
           child: AnnotatedRegion(
             value: SystemUiOverlayStyle(
